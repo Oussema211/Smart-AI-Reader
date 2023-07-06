@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Water Meter Reader</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+    .result-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+  }
+  
+  .result-table {
+      background-color: white;
+      padding: 20px;
+  }
+  
+</style>  
+  </head>
+  <body>
+    <header style="margin-left:350px;">
+      
+      <h3></h3>
+    </header>
+    <main>
+      <form method="post" enctype="multipart/form-data">
+         
+          
+        <input type="file" id="imageUpload" name="imageUpload" accept="image/*" multiple>
+
+          <input class="large-text-button centered-and-left-aligned-button btn" type="submit" name="start" value="Start Reading">
+          <img src="" alt="" id="selected-image" style="display:none; max-width: 250px; max-height: 500px;">
+          {% csrf_token %} 
+      </form>
+     
+      
+      <video autoplay loop muted>
+        <source src="C:/Users/Media/Downloads/AdobeStock_241834479_Video_HD_Preview.mov" type="video/mp4">
+      </video>
+    </main>
+
+    <script>
+      const imageInput = document.getElementById('image-input');
+      const selectedImage = document.getElementById('selected-image');
+      
+      imageInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          selectedImage.src = reader.result;
+          selectedImage.style.display = 'block';
+        }
+      });
+    </script>
+    <style>
+ 
+ #image-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#image-input::before {
+  content: 'Upload Image';
+  display: inline-block;
+  background-color: rgb(158, 9, 9);
+  color: white;
+  padding: 10px 32px;
+  margin: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 5px solid transparent;
+  border-radius: 0px;
+  margin-left: 60px;
+  position: relative;
+   left: -60px;
+   margin-right: 20px;
+}
+
+
+
+.upload-btn:focus {
+  outline: none;
+}
+
+         video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.large-text-button:hover {
+  background-color: #020202;
+}
+
+      #selected-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+      #selected-image {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="start"] {
+  position: absolute;
+  bottom: 469;
+  background-color: rgb(0, 0, 0);
+color: white;
+display: inline-block;
+padding: 6px 32px;
+margin: 50px;
+font-size: 20px;
+font-weight: 400;
+line-height: 1;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+border: 5px solid transparent;
+border-radius: 0px;
+margin-left: -30px;
+padding: 10px 15px;
+}
+
+form{
+      height: 520px;
+      width: 400px;
+      background-color: rgba(78, 72, 72, 0.13);
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 0px solid rgb(0, 0, 0);
+      box-shadow: 0 0 10px rgb(0, 0, 0);
+      padding: 50px 35px;
+  }
+  form h3{
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 42px;
+      text-align: center;
+  }
+  label{
+      display: block;
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: 500;
+  }
+/* Masquer le bouton de téléchargement de fichier */
+#choose-file-btn {
+display:y ;
+
+}
+body{
+      background-color: rgb(0, 0, 0);
+  }
+
+</style>
+
+  </body>
+</html>

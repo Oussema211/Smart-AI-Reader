@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Login Page</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+body{
+    background-color: #000000;
+    
+}
+
+
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+
+form{
+    height: 420px;
+    width: 400px;
+    background-color: #FD330A(245, 15, 15, 0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 5px solid rgb(0, 0, 0);
+    box-shadow: 0 0 40px #e6e1e0(8,7,16,0.6);
+    padding: 50px 35px;
+
+    
+			margin: auto;
+			width: 30%;
+			padding: 50px;
+			background-color: #000000;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+
+    font-family: Arial, sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+
+input{
+    display: block;
+    height: 25px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.486);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 25px 0;
+    font-size: 200px;
+    font-weight: 9000;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+    
+}
+.btn{
+	outline: none;
+	width: 100%;
+	background: none;
+	border: none; 
+	color: #fff;
+	padding: 20px ;
+	font-size: 600px;
+	cursor: pointer;
+    background-color: #000000;
+
+}
+
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: #FD330A;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color:#FD330A(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(0, 0, 0, 0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+
+
+
+
+.btn-box{
+	margin-top:30px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 50px;
+	padding: 12px ;
+    font-size: 600px;
+}
+.btn{
+	position: absolute;
+	width: 100%;
+	padding: 30px;
+
+}
+.span1{
+	position: absolute;
+    top:100px;
+    left:0;
+    width:109px;
+    height: 6px;
+    background: linear-gradient(to right ,#000000, #fd330a);
+}
+.span2{
+	position: absolute;
+    top:149px;
+    left:0;
+    width:88%;
+    height: 3px;
+    background: linear-gradient(to right ,#000000, #fd330a);
+}
+.span3{
+	position: absolute;
+    top:204px;
+    left:0;
+    width:88%;
+    height: 3px;
+    background: linear-gradient(to right ,#050505,#fd330a);
+}
+
+.span_1{
+	position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height: 3px;
+    background: linear-gradient(to right ,#030303,#fd330a);
+      animation: anim1 2s linear infinite;
+}
+.span_2{
+	position: absolute;
+    bottom:0;
+    right:0;
+    width:3px;
+    height: 100%;
+    background: linear-gradient(to bottom ,#000000, #fd330a);
+      animation: anim2 2s linear infinite;
+}
+.span_3{
+	position: absolute;
+   	bottom:0;
+    left:0;
+    width:100%;
+    height: 3px;
+    background: linear-gradient(to left,#000000, #fd330a);
+      animation: anim3 2s linear infinite;
+}
+.span_4{
+	position: absolute;
+   	top:0;
+    left:0;
+    width:3px;
+    height: 100%;
+    background: linear-gradient(to top ,#070707,#fd330a);
+    animation: anim4 2s linear infinite;
+}
+@keyframes anim1 {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+@keyframes anim2 {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+@keyframes anim3 {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes anim4 {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+.centered-and-left-aligned-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.large-text-button {
+  font-size: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="post">
+        <h3>Login Here</h3>
+        {% csrf_token %}
+      
+        <label for="username"></label>
+        <input type="text" placeholder="Enter Username" id="username" name="username" name="username">
+        
+        <label for="password"></label>
+        <input type="password" placeholder="Password" id="password" name="pass">
+        <span class="span2"></span>
+        <span class="span3"></span>
+    </div>
+    <div class="btn-box">
+      <input class="large-text-button" class="centered-and-left-aligned-button" class="btn" type="submit" name="btn" value="Sign in">
+      <span class="span_1"></span>
+      <span class="span_2"></span>
+      <span class="span_3"></span>
+      <span class="span_4"></span>  
+    </div>
+    <a href="{% url 'signup' %}" >Create a account</a>
+    </form>
+</body>
+</html>

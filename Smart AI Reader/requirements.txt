@@ -1,0 +1,11 @@
+numpy==1.19.4
+Pillow
+opendatasets==0.1.20
+keras==2.6.0
+scipy==1.4.1
+deskew
+typing
+pyyaml==5.1
+pycocotools
+detectron2
+django
